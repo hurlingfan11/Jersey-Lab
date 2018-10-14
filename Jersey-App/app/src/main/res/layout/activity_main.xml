@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!-- Wraps together the toolbar withe the app bar -->
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/coordinator_layout"
     tools:context=".MainActivity">
 
+    <!-- ndroid:id="@+id/coordinator_layout" used for Snackbar as that is where we want our snackbar to go-->
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,14 +25,20 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <!-- Code from content main is simply inserted here
+    Simplifies the code
+    The Code in activity_main rarely changes - its boiler plate code
+    But content code will chanage depending on the app-->
     <include layout="@layout/content_main" />
 
+    <!-- Code for the floating button  -->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@drawable/ic_add" />
+    <!-- app:srcCompat="@android:drawable/ic_dialog_email" Gives an email jpeg-->
 
 </android.support.design.widget.CoordinatorLayout>
